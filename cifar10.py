@@ -250,7 +250,9 @@ def inference(x, pkeep):
 #    fc4 = FullConnected(po, 384*8*8, 512, activation='relu')
 #    fc4 = fc4.output()
     with tf.variable_scope('full4') as scope:
-        reshape = tf.reshape(drop3, [x_image.get_shape()[0],-1 ] )
+	print("x_image shape : " ,x_image.get_shape()[0])
+#        reshape = tf.reshape(drop3, [x_image.get_shape()[0],-1 ] )
+        reshape = tf.reshape(drop3, [128,-1 ] )
 	dim = reshape.get_shape()[1].value	
 	print('>>>>> reshape = ', reshape,'dim=',dim)
 	weights = _variable_with_weight_decay('weights',shape=[dim,512],stddev=5e-3,wd=0.004) #wd??
@@ -417,3 +419,4 @@ def train(total_loss, global_step):
 #  extracted_dir_path = os.path.join(dest_directory, 'cifar-10-batches-bin')
 #  if not os.path.exists(extracted_dir_path):
 #    tarfile.open(filepath, 'r:gz').extractall(dest_directory)
+

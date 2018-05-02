@@ -1,0 +1,4 @@
+cifar10_eval/
+cifar10_train/
+data_dir/
+fer2013.bin/

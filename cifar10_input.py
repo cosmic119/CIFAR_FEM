@@ -212,11 +212,11 @@ def inputs(eval_data, data_dir, batch_size):
   """
   if not eval_data:
     # fer2013pubtest.bin, fer2013privtest.bin for public test and private test
-    filenames = [os.path.join(data_dir, 'fer2013pritest.bin') ]
+    filenames = [os.path.join(data_dir, 'fer2013pubtst.bin') ]
     num_examples_per_epoch = NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN
   else:
     # fer2013pubtest.bin, fer2013privtest.bin for public test and private test
-    filenames = [os.path.join(data_dir, 'fer2013pubtst.bin')]
+    filenames = [os.path.join(data_dir, 'fer2013pritst.bin')]
     num_examples_per_epoch = NUM_EXAMPLES_PER_EPOCH_FOR_EVAL
 
   for f in filenames:
